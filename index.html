@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>In-N-Out Order Builder</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🍔 In-N-Out Order Builder</h1>
+    <form id="orderForm">
+      <label for="burger">Burger:</label>
+      <select id="burger"></select>
+
+      <label for="fries">Fries:</label>
+      <select id="fries"></select>
+
+      <label for="drink">Drink:</label>
+      <select id="drink"></select>
+
+      <label for="shake">Shake:</label>
+      <select id="shake"></select>
+
+      <label><input type="checkbox" id="vegetarianOnly"> Vegetarian Only</label>
+      <label><input type="checkbox" id="californiaOnly"> California Items Only</label>
+    </form>
+    <div class="receipt">
+      <h2>🧾 Your Order</h2>
+      <pre id="orderOutput">Select items to build your order...</pre>
+    </div>
+  </div>
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

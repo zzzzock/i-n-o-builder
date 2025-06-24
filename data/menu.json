@@ -1,0 +1,141 @@
+{
+  "burgers": [
+    {
+      "name": "Hamburger",
+      "price": 2.4
+    },
+    {
+      "name": "Cheeseburger",
+      "price": 2.85
+    },
+    {
+      "name": "Double-Double",
+      "price": 4.15
+    },
+    {
+      "name": "3x3",
+      "price": 5.6
+    },
+    {
+      "name": "4x4",
+      "price": 7.05
+    },
+    {
+      "name": "Grilled Cheese",
+      "vegetarian": true,
+      "price": 2.35
+    },
+    {
+      "name": "Flying Dutchman",
+      "price": 2.1
+    },
+    {
+      "name": "Wish Burger",
+      "vegetarian": true,
+      "price": 1.95,
+      "secret": true
+    },
+    {
+      "name": "Protein Style Cheeseburger",
+      "price": 2.85,
+      "secret": true
+    },
+    {
+      "name": "Animal Style Cheeseburger",
+      "price": 3.25,
+      "secret": true
+    },
+    {
+      "name": "Pup Patty",
+      "price": 1.0,
+      "secret": true
+    }
+  ],
+  "fries": [
+    {
+      "name": "Regular",
+      "price": 2.1
+    },
+    {
+      "name": "Well-Done",
+      "price": 2.1,
+      "secret": true
+    },
+    {
+      "name": "Light-Well",
+      "price": 2.1,
+      "secret": true
+    },
+    {
+      "name": "Animal Style",
+      "price": 3.95,
+      "secret": true
+    },
+    {
+      "name": "Cheese Fries",
+      "price": 3.1,
+      "secret": true
+    },
+    {
+      "name": "Roadkill Fries",
+      "price": 6.0,
+      "secret": true
+    }
+  ],
+  "drinks": [
+    {
+      "name": "Coke",
+      "price": 1.85
+    },
+    {
+      "name": "Arnold Palmer",
+      "price": 1.85,
+      "secret": true
+    },
+    {
+      "name": "Root Beer Float",
+      "price": 2.1,
+      "secret": true,
+      "californiaOnly": true
+    },
+    {
+      "name": "Lemon-Up",
+      "price": 1.85,
+      "secret": true
+    },
+    {
+      "name": "Hot Cocoa",
+      "price": 1.65,
+      "californiaOnly": false
+    }
+  ],
+  "shakes": [
+    {
+      "name": "Vanilla",
+      "price": 2.85
+    },
+    {
+      "name": "Chocolate",
+      "price": 2.85
+    },
+    {
+      "name": "Strawberry",
+      "price": 2.85
+    },
+    {
+      "name": "Neapolitan",
+      "price": 2.85,
+      "secret": true
+    },
+    {
+      "name": "Black & White",
+      "price": 2.85,
+      "secret": true
+    },
+    {
+      "name": "Around the World",
+      "price": 2.85,
+      "secret": true
+    }
+  ]
+}

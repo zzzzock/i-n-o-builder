@@ -1,0 +1,38 @@
+
+body {
+  background: #fff8e1;
+  font-family: monospace;
+  color: #d00000;
+  padding: 2rem;
+}
+h1 {
+  text-align: center;
+  color: #d00000;
+}
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  border: 2px dashed #ffcc00;
+  padding: 1rem;
+}
+label {
+  display: block;
+  margin: 1rem 0 0.2rem;
+}
+select, input[type="checkbox"] {
+  width: 100%;
+  padding: 0.4rem;
+  font-size: 1rem;
+}
+.receipt {
+  margin-top: 2rem;
+  background: #eeeeee;
+  padding: 1rem;
+  border: 1px solid #999;
+  transition: transform 0.4s ease, background-color 0.4s ease;
+}
+.receipt.animate {
+  transform: scale(1.02);
+  background-color: #fffde7;
+}
