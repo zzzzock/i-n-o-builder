@@ -1,11 +1,14 @@
 
+let currentMenu = null;
+
 async function fetchMenu() {
   const res = await fetch("data/menu.json");
   return res.json();
 }
 
-function populateSelect(id, options) {
+function populateSelect(id, options, selectedValue) {
   const select = document.getElementById(id);
+  const prev = select.value || selectedValue || "";
   select.innerHTML = '<option value="">-- None --</option>';
   options.forEach(opt => {
     const el = document.createElement("option");
@@ -16,6 +19,7 @@ function populateSelect(id, options) {
     el.dataset.price = opt.price || 0;
     select.appendChild(el);
   });
+  select.value = prev;
 }
 
 function updateOrder() {
@@ -54,21 +58,24 @@ function applyFilters(menu) {
     (!vegOnly || item.vegetarian) &&
     (!caOnly || !item.californiaOnly || item.californiaOnly === true);
 
-  populateSelect("burger", menu.burgers.filter(filterFn));
-  populateSelect("fries", menu.fries.filter(filterFn));
-  populateSelect("drink", menu.drinks.filter(filterFn));
-  populateSelect("shake", menu.shakes.filter(filterFn));
+  populateSelect("burger", menu.burgers.filter(filterFn), document.getElementById("burger").value);
+  populateSelect("fries", menu.fries.filter(filterFn), document.getElementById("fries").value);
+  populateSelect("drink", menu.drinks.filter(filterFn), document.getElementById("drink").value);
+  populateSelect("shake", menu.shakes.filter(filterFn), document.getElementById("shake").value);
 }
 
-document.addEventListener("DOMContentLoaded", async () => {
-  const menu = await fetchMenu();
-  applyFilters(menu);
-  updateOrder();
-
+function attachEvents() {
   document.querySelectorAll("select, input[type=checkbox]").forEach(el =>
     el.addEventListener("change", () => {
-      applyFilters(menu);
+      applyFilters(currentMenu);
       updateOrder();
     })
   );
+}
+
+document.addEventListener("DOMContentLoaded", async () => {
+  currentMenu = await fetchMenu();
+  applyFilters(currentMenu);
+  attachEvents();
+  updateOrder();
 });
