@@ -192,3 +192,40 @@ pre {
   color: #333;
   margin: 0;
 }
+
+/* Mobile */
+@media (max-width: 600px) {
+  body {
+    padding: 0.75rem;
+  }
+
+  .container {
+    padding: 1rem;
+  }
+
+  h1 {
+    font-size: 1.3rem;
+  }
+
+  .filters {
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .modifier-grid {
+    grid-template-columns: 1fr;
+  }
+
+  select {
+    font-size: 0.95rem;
+    padding: 0.5rem 0.4rem;
+  }
+
+  .verbal-order p {
+    font-size: 1rem;
+  }
+
+  .receipt {
+    margin-top: 1.25rem;
+  }
+}

@@ -204,21 +204,35 @@ function article(name) {
   return /^[aeiou]/i.test(name) ? "an" : "a";
 }
 
+function joinAnd(arr) {
+  if (arr.length === 0) return "";
+  if (arr.length === 1) return arr[0];
+  if (arr.length === 2) return `${arr[0]} and ${arr[1]}`;
+  return `${arr.slice(0, -1).join(", ")}, and ${arr[arr.length - 1]}`;
+}
+
 function generateVerbalOrder() {
   const parts = [];
 
   if (state.burger) {
-    const mods = state.burgerModifiers.map(m => m.name).join(" ");
-    const burgerStr = mods ? `${state.burger.name} ${mods}` : state.burger.name;
-    parts.push(`${article(burgerStr)} ${burgerStr}`);
+    const styles = state.burgerModifiers.filter(m => m.category === "style").map(m => m.name);
+    const adds   = state.burgerModifiers.filter(m => m.category === "add").map(m => m.name);
+    const removes = state.burgerModifiers.filter(m => m.category === "remove")
+                      .map(m => m.name.replace(/^No /, "").toLowerCase());
+
+    let burgerStr = `${article(state.burger.name)} ${state.burger.name}`;
+    if (styles.length) burgerStr += `, ${styles.join(", ")}`;
+    if (adds.length)   burgerStr += `, with ${joinAnd(adds)}`;
+    if (removes.length) burgerStr += `, hold the ${joinAnd(removes)}`;
+    parts.push(burgerStr);
   }
 
   if (state.fries) {
     const doneness = state.friesDoneness && state.friesDoneness.name !== "Regular"
       ? state.friesDoneness.name : "";
-    const addOns = state.friesAddOns.map(a => a.name).join(" ");
-    const prefix = [doneness, addOns].filter(Boolean).join(" ");
-    parts.push(prefix ? `${prefix} fries` : "fries");
+    const addOns = state.friesAddOns.map(a => a.name);
+    const qualifiers = [doneness, ...addOns].filter(Boolean);
+    parts.push(qualifiers.length ? `fries, ${qualifiers.join(", ")}` : "fries");
   }
 
   if (state.drink) {

@@ -57,83 +57,98 @@
   "burgerModifiers": [
     {
       "name": "Animal Style",
+      "category": "style",
       "price": 0,
       "description": "Mustard-fried patty + grilled onions + extra spread + extra pickles.",
       "secret": true
     },
     {
       "name": "Protein Style",
+      "category": "style",
       "price": 0,
       "description": "Lettuce wrap replaces the bun. Low carb and surprisingly good.",
       "secret": true
     },
     {
       "name": "Mustard Grilled",
+      "category": "style",
       "price": 0,
       "description": "Mustard seared directly onto the patty while it cooks — adds a tangy char.",
       "secret": true
     },
     {
+      "name": "Double Meat",
+      "category": "style",
+      "price": 1.30,
+      "description": "An extra beef patty without extra cheese.",
+      "secret": true
+    },
+    {
       "name": "Grilled Onions",
+      "category": "add",
       "price": 0,
       "description": "Slow-caramelized onions instead of raw. Much sweeter and softer.",
       "secret": true
     },
     {
       "name": "Extra Cheese",
+      "category": "add",
       "price": 0.30,
       "description": "An extra slice of American cheese."
     },
     {
-      "name": "Double Meat",
-      "price": 1.30,
-      "description": "An extra beef patty without extra cheese.",
-      "secret": true
-    },
-    {
       "name": "Chilies",
+      "category": "add",
       "price": 0,
       "description": "Diced mild yellow or green chiles added to your burger.",
       "secret": true
     },
     {
       "name": "Extra Spread",
+      "category": "add",
       "price": 0,
       "description": "Extra of In-N-Out's Thousand Island-style secret sauce."
     },
     {
       "name": "Spread on the Side",
+      "category": "add",
       "price": 0,
       "description": "Spread served in a cup, not on the bun — good for dipping.",
       "secret": true
     },
     {
-      "name": "No Spread",
-      "price": 0,
-      "description": "No spread on bun or patty."
-    },
-    {
       "name": "Extra Pickles",
+      "category": "add",
       "price": 0,
       "description": "Extra dill pickle slices."
     },
     {
+      "name": "No Spread",
+      "category": "remove",
+      "price": 0,
+      "description": "No spread on bun or patty."
+    },
+    {
       "name": "No Pickles",
+      "category": "remove",
       "price": 0,
       "description": "Hold the pickles."
     },
     {
       "name": "No Onions",
+      "category": "remove",
       "price": 0,
       "description": "No onions of any kind."
     },
     {
       "name": "No Lettuce",
+      "category": "remove",
       "price": 0,
       "description": "Hold the lettuce."
     },
     {
       "name": "No Tomato",
+      "category": "remove",
       "price": 0,
       "description": "Hold the tomato."
     }
