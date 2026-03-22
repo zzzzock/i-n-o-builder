@@ -2,139 +2,334 @@
   "burgers": [
     {
       "name": "Hamburger",
-      "price": 2.4
+      "price": 2.40,
+      "description": "Single beef patty with lettuce, tomato, onion, spread, and your choice of extras."
     },
     {
       "name": "Cheeseburger",
-      "price": 2.85
+      "price": 2.85,
+      "description": "Single beef patty with a slice of American cheese and all the standard toppings."
     },
     {
       "name": "Double-Double",
-      "price": 4.15
+      "price": 4.15,
+      "description": "Two beef patties and two slices of American cheese — the In-N-Out signature item."
     },
     {
       "name": "3x3",
-      "price": 5.6
+      "price": 5.60,
+      "description": "Three beef patties with three slices of cheese. Not on the menu board — just ask.",
+      "secret": true
     },
     {
       "name": "4x4",
-      "price": 7.05
+      "price": 7.05,
+      "description": "Four beef patties with four slices of cheese. Still totally doable.",
+      "secret": true
     },
     {
       "name": "Grilled Cheese",
-      "vegetarian": true,
-      "price": 2.35
+      "price": 2.35,
+      "description": "Two slices of melted American cheese on a toasted bun — no meat. Great vegetarian option.",
+      "vegetarian": true
     },
     {
       "name": "Flying Dutchman",
-      "price": 2.1
+      "price": 2.10,
+      "description": "Two beef patties with two slices of melted cheese — no bun, no toppings. Pure protein.",
+      "secret": true
     },
     {
       "name": "Wish Burger",
-      "vegetarian": true,
       "price": 1.95,
-      "secret": true
-    },
-    {
-      "name": "Protein Style Cheeseburger",
-      "price": 2.85,
-      "secret": true
-    },
-    {
-      "name": "Animal Style Cheeseburger",
-      "price": 3.25,
+      "description": "All the veggie toppings on a bun — no meat, no cheese. Lighter than it sounds.",
+      "vegetarian": true,
       "secret": true
     },
     {
       "name": "Pup Patty",
-      "price": 1.0,
+      "price": 1.00,
+      "description": "A plain, unseasoned beef patty for your dog. Served separately.",
       "secret": true
     }
   ],
-  "fries": [
+
+  "burgerModifiers": [
     {
-      "name": "Regular",
-      "price": 2.1
+      "name": "Animal Style",
+      "price": 0,
+      "description": "Mustard-fried patty + grilled onions + extra spread + extra pickles.",
+      "secret": true
     },
     {
-      "name": "Well-Done",
-      "price": 2.1,
+      "name": "Protein Style",
+      "price": 0,
+      "description": "Lettuce wrap replaces the bun. Low carb and surprisingly good.",
       "secret": true
+    },
+    {
+      "name": "Mustard Grilled",
+      "price": 0,
+      "description": "Mustard seared directly onto the patty while it cooks — adds a tangy char.",
+      "secret": true
+    },
+    {
+      "name": "Grilled Onions",
+      "price": 0,
+      "description": "Slow-caramelized onions instead of raw. Much sweeter and softer.",
+      "secret": true
+    },
+    {
+      "name": "Extra Cheese",
+      "price": 0.30,
+      "description": "An extra slice of American cheese."
+    },
+    {
+      "name": "Double Meat",
+      "price": 1.30,
+      "description": "An extra beef patty without extra cheese.",
+      "secret": true
+    },
+    {
+      "name": "Chilies",
+      "price": 0,
+      "description": "Diced mild yellow or green chiles added to your burger.",
+      "secret": true
+    },
+    {
+      "name": "Extra Spread",
+      "price": 0,
+      "description": "Extra of In-N-Out's Thousand Island-style secret sauce."
+    },
+    {
+      "name": "Spread on the Side",
+      "price": 0,
+      "description": "Spread served in a cup, not on the bun — good for dipping.",
+      "secret": true
+    },
+    {
+      "name": "No Spread",
+      "price": 0,
+      "description": "No spread on bun or patty."
+    },
+    {
+      "name": "Extra Pickles",
+      "price": 0,
+      "description": "Extra dill pickle slices."
+    },
+    {
+      "name": "No Pickles",
+      "price": 0,
+      "description": "Hold the pickles."
+    },
+    {
+      "name": "No Onions",
+      "price": 0,
+      "description": "No onions of any kind."
+    },
+    {
+      "name": "No Lettuce",
+      "price": 0,
+      "description": "Hold the lettuce."
+    },
+    {
+      "name": "No Tomato",
+      "price": 0,
+      "description": "Hold the tomato."
+    }
+  ],
+
+  "fries": [
+    {
+      "name": "Regular Fries",
+      "price": 2.10,
+      "description": "Freshly cut Kennebec potatoes fried to order. You can customize how done you want them."
+    }
+  ],
+
+  "friesDoneness": [
+    {
+      "name": "Very Light",
+      "description": "Barely cooked — pale, soft, almost like a potato stick.",
+      "secret": true
+    },
+    {
+      "name": "Light",
+      "description": "Lighter color and softer texture than standard.",
+      "secret": true
+    },
+    {
+      "name": "Slightly Light",
+      "description": "Just a hair under the standard cook.",
+      "secret": true
+    },
+    {
+      "name": "Regular",
+      "description": "Standard In-N-Out fry — the default. Golden and a bit soft."
     },
     {
       "name": "Light-Well",
-      "price": 2.1,
+      "description": "Slightly crisper than regular, not quite well-done.",
       "secret": true
     },
     {
-      "name": "Animal Style",
-      "price": 3.95,
+      "name": "Well-Done",
+      "description": "Extra crispy and golden all the way through. Highly recommended.",
       "secret": true
     },
     {
-      "name": "Cheese Fries",
-      "price": 3.1,
-      "secret": true
-    },
-    {
-      "name": "Roadkill Fries",
-      "price": 6.0,
+      "name": "Extra Well-Done",
+      "description": "Maximally crispy — almost crunchy. Gets close to a chip.",
       "secret": true
     }
   ],
+
+  "friesAddOns": [
+    {
+      "name": "Animal Style",
+      "price": 1.85,
+      "description": "Topped with melted cheese, grilled onions, and special spread.",
+      "secret": true
+    },
+    {
+      "name": "Cheese",
+      "price": 0.85,
+      "description": "Melted American cheese poured over your fries.",
+      "secret": true
+    },
+    {
+      "name": "Roadkill",
+      "price": 3.90,
+      "description": "Animal Style fries with a Flying Dutchman burger crumbled right on top.",
+      "secret": true
+    }
+  ],
+
   "drinks": [
     {
       "name": "Coke",
-      "price": 1.85
+      "price": 1.85,
+      "description": "Fountain Coca-Cola. Free refills."
+    },
+    {
+      "name": "Diet Coke",
+      "price": 1.85,
+      "description": "Fountain Diet Coke. Free refills."
+    },
+    {
+      "name": "7UP",
+      "price": 1.85,
+      "description": "Fountain 7UP. Crisp and citrusy."
+    },
+    {
+      "name": "Dr Pepper",
+      "price": 1.85,
+      "description": "Fountain Dr Pepper."
+    },
+    {
+      "name": "Barq's Root Beer",
+      "price": 1.85,
+      "description": "Fountain Barq's Root Beer. The one with bite."
+    },
+    {
+      "name": "Cherry Coke",
+      "price": 1.85,
+      "description": "Fountain Cherry Coca-Cola."
+    },
+    {
+      "name": "Lemonade",
+      "price": 2.25,
+      "description": "Fresh-squeezed lemonade. Worth it."
+    },
+    {
+      "name": "Pink Lemonade",
+      "price": 2.25,
+      "description": "Fresh lemonade with strawberry. A newer addition.",
+      "californiaOnly": true
+    },
+    {
+      "name": "Iced Tea (Sweet)",
+      "price": 1.85,
+      "description": "Southern-style sweet iced tea."
+    },
+    {
+      "name": "Iced Tea (Unsweet)",
+      "price": 1.85,
+      "description": "Plain unsweetened iced tea."
     },
     {
       "name": "Arnold Palmer",
       "price": 1.85,
+      "description": "Half iced tea, half lemonade — a classic combo.",
       "secret": true
-    },
-    {
-      "name": "Root Beer Float",
-      "price": 2.1,
-      "secret": true,
-      "californiaOnly": true
     },
     {
       "name": "Lemon-Up",
       "price": 1.85,
+      "description": "7UP with lemon — a secret off-menu mix.",
       "secret": true
+    },
+    {
+      "name": "Root Beer Float",
+      "price": 2.10,
+      "description": "Barq's Root Beer with a scoop of vanilla ice cream.",
+      "secret": true,
+      "californiaOnly": true
+    },
+    {
+      "name": "Coffee",
+      "price": 1.45,
+      "description": "Hot drip coffee."
+    },
+    {
+      "name": "Milk",
+      "price": 1.10,
+      "description": "Cold whole milk."
+    },
+    {
+      "name": "Chocolate Milk",
+      "price": 1.25,
+      "description": "Cold chocolate milk."
     },
     {
       "name": "Hot Cocoa",
       "price": 1.65,
-      "californiaOnly": false
+      "description": "Rich hot chocolate."
     }
   ],
+
   "shakes": [
     {
       "name": "Vanilla",
-      "price": 2.85
+      "price": 2.85,
+      "description": "Classic vanilla milkshake made with real ice cream."
     },
     {
       "name": "Chocolate",
-      "price": 2.85
+      "price": 2.85,
+      "description": "Rich chocolate milkshake."
     },
     {
       "name": "Strawberry",
-      "price": 2.85
+      "price": 2.85,
+      "description": "Fresh strawberry milkshake."
     },
     {
       "name": "Neapolitan",
       "price": 2.85,
+      "description": "Vanilla, chocolate, and strawberry layered in one cup.",
       "secret": true
     },
     {
       "name": "Black & White",
       "price": 2.85,
+      "description": "Vanilla and chocolate blended together.",
       "secret": true
     },
     {
       "name": "Around the World",
       "price": 2.85,
+      "description": "All three flavors fully blended — everything at once.",
       "secret": true
     }
   ]

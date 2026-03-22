@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,25 +7,56 @@
 </head>
 <body>
   <div class="container">
-    <h1>🍔 In-N-Out Order Builder</h1>
+    <h1>In-N-Out Order Builder</h1>
+    <p class="subtitle">First time? No problem. Build your order below — <span class="secret-hint">🤫 = secret menu</span></p>
+
+    <div class="filters">
+      <label class="filter-label">
+        <input type="checkbox" id="vegetarianOnly"> Vegetarian Only
+      </label>
+      <label class="filter-label">
+        <input type="checkbox" id="californiaOnly"> California Items Only
+      </label>
+    </div>
+
     <form id="orderForm">
-      <label for="burger">Burger:</label>
-      <select id="burger"></select>
 
-      <label for="fries">Fries:</label>
-      <select id="fries"></select>
+      <div class="order-section">
+        <h3 class="section-title">Burger</h3>
+        <select id="burger"></select>
+        <div id="burgerDescription" class="item-description"></div>
+        <div id="burgerModifiers" class="modifier-grid" hidden></div>
+      </div>
 
-      <label for="drink">Drink:</label>
-      <select id="drink"></select>
+      <div class="order-section">
+        <h3 class="section-title">Fries</h3>
+        <select id="fries"></select>
+        <div id="friesDescription" class="item-description"></div>
+        <div id="friesOptions" hidden>
+          <span class="subsection-label">Doneness:</span>
+          <select id="friesDoneness"></select>
+          <div id="friesDonenessDescription" class="item-description"></div>
+          <span class="subsection-label">Add-Ons:</span>
+          <div id="friesAddOns" class="modifier-grid"></div>
+        </div>
+      </div>
 
-      <label for="shake">Shake:</label>
-      <select id="shake"></select>
+      <div class="order-section">
+        <h3 class="section-title">Drink</h3>
+        <select id="drink"></select>
+        <div id="drinkDescription" class="item-description"></div>
+      </div>
 
-      <label><input type="checkbox" id="vegetarianOnly"> Vegetarian Only</label>
-      <label><input type="checkbox" id="californiaOnly"> California Items Only</label>
+      <div class="order-section">
+        <h3 class="section-title">Shake</h3>
+        <select id="shake"></select>
+        <div id="shakeDescription" class="item-description"></div>
+      </div>
+
     </form>
+
     <div class="receipt">
-      <h2>🧾 Your Order</h2>
+      <h2>Your Order</h2>
       <pre id="orderOutput">Select items to build your order...</pre>
     </div>
   </div>
