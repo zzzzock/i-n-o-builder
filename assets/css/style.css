@@ -141,6 +141,33 @@ select {
   color: #8b0000;
 }
 
+/* Verbal order */
+.verbal-order {
+  margin-top: 1.5rem;
+  padding: 0.85rem 1rem;
+  background: #fffde7;
+  border: 2px solid #ffcc00;
+  border-radius: 4px;
+  position: relative;
+}
+
+.verbal-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  display: block;
+  margin-bottom: 0.35rem;
+}
+
+.verbal-order p {
+  margin: 0;
+  font-size: 1.15rem;
+  color: #d00000;
+  font-weight: bold;
+  line-height: 1.5;
+}
+
 /* Receipt */
 .receipt {
   margin-top: 2rem;

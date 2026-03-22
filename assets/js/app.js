@@ -200,6 +200,43 @@ function onFilterChange() {
   updateOrder();
 }
 
+function article(name) {
+  return /^[aeiou]/i.test(name) ? "an" : "a";
+}
+
+function generateVerbalOrder() {
+  const parts = [];
+
+  if (state.burger) {
+    const mods = state.burgerModifiers.map(m => m.name).join(" ");
+    const burgerStr = mods ? `${state.burger.name} ${mods}` : state.burger.name;
+    parts.push(`${article(burgerStr)} ${burgerStr}`);
+  }
+
+  if (state.fries) {
+    const doneness = state.friesDoneness && state.friesDoneness.name !== "Regular"
+      ? state.friesDoneness.name : "";
+    const addOns = state.friesAddOns.map(a => a.name).join(" ");
+    const prefix = [doneness, addOns].filter(Boolean).join(" ");
+    parts.push(prefix ? `${prefix} fries` : "fries");
+  }
+
+  if (state.drink) {
+    parts.push(`${article(state.drink.name)} ${state.drink.name}`);
+  }
+
+  if (state.shake) {
+    const shakeName = `${state.shake.name} shake`;
+    parts.push(`${article(shakeName)} ${shakeName}`);
+  }
+
+  if (parts.length === 0) return null;
+  if (parts.length === 1) return `Can I get ${parts[0]}?`;
+  if (parts.length === 2) return `Can I get ${parts[0]} and ${parts[1]}?`;
+  const last = parts.pop();
+  return `Can I get ${parts.join(", ")}, and ${last}?`;
+}
+
 function updateOrder() {
   const lines = [];
   let total = 0;
@@ -249,6 +286,15 @@ function updateOrder() {
       lines.join("\n") +
       `Total: $${total.toFixed(2)}\n\n` +
       `"That's ready in a few!"`;
+  }
+
+  const verbal = generateVerbalOrder();
+  const verbalBox = document.getElementById("verbalOrder");
+  if (verbal) {
+    document.getElementById("verbalText").textContent = verbal;
+    verbalBox.hidden = false;
+  } else {
+    verbalBox.hidden = true;
   }
 
   const receipt = document.querySelector(".receipt");
